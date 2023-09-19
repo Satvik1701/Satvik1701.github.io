@@ -1,0 +1,8 @@
+@misc{agboh2023learning,
+      title={Learning to Efficiently Plan Robust Frictional Multi-Object Grasps}, 
+      author={Wisdom C. Agboh and Satvik Sharma and Kishore Srinivas and Mallika Parulekar and Gaurav Datta and Tianshuang Qiu and Jeffrey Ichnowski and Eugen Solowjow and Mehmet Dogar and Ken Goldberg},
+      year={2023},
+      eprint={2210.07420},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
+}
