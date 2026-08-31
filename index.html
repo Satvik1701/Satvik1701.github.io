@@ -1,16 +1,6 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- Hi, Jon Here. Please DELETE the two <script> tags below if you use this HTML, otherwise my analytics will track your page -->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7580334-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-7580334-2');
-  </script> -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <!-- Google Tag Manager -->
 
 <!-- Google tag (gtag.js) -->
@@ -30,463 +20,295 @@
   })(window,document,'script','dataLayer','GTM-P6PV2P73');</script>
   <!-- End Google Tag Manager -->
 
-  <title>Satvik Sharma</title>
-  
-  <meta name="author" content="Satvik Sharma">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="icon" type="image/png" href="images/seal_icon.png">
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Satvik Sharma</title>
+<meta name="author" content="Satvik Sharma">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  /* Three text tones (prose / metadata / emphasis), one hairline, one link
+     colour. Nothing else carries colour except the award note. */
+  :root{
+    --bg:#fdfcfa;
+    --ink:#1a1a17;     /* names, paper titles */
+    --prose:#33322c;   /* running text: bio, summaries */
+    --meta:#6b6a62;    /* authors, venue, separators, colophon */
+    --rule:#e2dfd6;    /* hairlines and figure edges */
+    --link:#1258a6;
+    --link-hi:#b4530b;
+    --award:#b3252c;
+    --serif:"Source Serif 4","Source Serif Pro",Georgia,"Times New Roman",serif;
+    --sans:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
 
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--prose);
+    font-family:var(--serif);
+    font-size:15.5px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%}
+
+  a{color:var(--link);text-decoration:none}
+  a:hover,a:focus{color:var(--link-hi)}
+  a:focus-visible{outline:2px solid var(--link);outline-offset:2px;border-radius:1px}
+
+  /* 800px keeps the summary lines near 80 characters, the same measure the
+     original page used. */
+  main{
+    max-width:800px;
+    margin:0 auto;
+    padding:56px 32px 60px;
+  }
+
+  /* ---------- header ---------- */
+
+  .head{
+    display:flex;
+    align-items:flex-start;
+    gap:34px;
+    padding-bottom:30px;
+  }
+  .intro{flex:1 1 auto;min-width:0}
+
+  h1{
+    font-family:var(--serif);
+    font-size:30px;
+    font-weight:600;
+    letter-spacing:-.012em;
+    line-height:1.15;
+    color:var(--ink);
+    margin:-5px 0 13px;
+  }
+  .bio{margin:0}
+
+  .contact{
+    margin:15px 0 0;
+    font-family:var(--sans);
+    font-size:13px;
+    color:var(--meta);
+  }
+  .contact span{margin:0 7px}
+
+  .portrait{display:block;flex:0 0 auto;width:148px;line-height:0}
+  .portrait img{width:148px;height:auto;display:block;border:1px solid var(--rule)}
+
+  /* ---------- section ---------- */
+
+  .section-head{
+    font-family:var(--serif);
+    font-size:17px;
+    font-weight:600;
+    color:var(--ink);
+    margin:0 0 9px;
+    padding-top:24px;
+    border-top:1px solid var(--rule);
+  }
+
+  /* ---------- publication rows ---------- */
+
+  .pub{
+    display:grid;
+    grid-template-columns:220px minmax(0,1fr);
+    column-gap:22px;
+    align-items:start;
+    padding:18px 0;
+    border-top:1px solid var(--rule);
+  }
+  .pub:first-of-type{border-top:none;padding-top:12px}
+
+  /* Every figure is cut to the same 16:9 box, so the left column is one
+     uniform plate down the whole list. The five demo clips are cropped from
+     16:9 source footage; the two papers with no video (SMS, PG-BROIL) have
+     their figure padded on its own white ground rather than cropped, because
+     cropping either one would cut a label. Muted and looping - illustrations,
+     not media the reader has to operate. */
+  .thumb{display:block;width:220px;line-height:0}
+  .thumb video,.thumb img{
+    width:220px;
+    height:124px;
+    display:block;
+    border:1px solid var(--rule);
+    border-radius:8px;
+    background:#fff;
+  }
+
+  .body{min-width:0}
+
+  h3.title{
+    font-family:var(--serif);
+    font-size:16.5px;
+    font-weight:600;
+    line-height:1.32;
+    letter-spacing:-.004em;
+    margin:-3px 0 3px;
+    text-wrap:pretty;
+  }
+  h3.title a{
+    color:var(--ink);
+    text-decoration:underline;
+    text-decoration-color:var(--rule);
+    text-decoration-thickness:1px;
+    text-underline-offset:3px;
+  }
+  h3.title a:hover,h3.title a:focus{
+    color:var(--link);
+    text-decoration-color:var(--link);
+  }
+
+  /* Authors, venue and links form one metadata block in the sans face; the
+     serif summary below it is the only prose in the row. */
+  .authors,.venue,.links{
+    font-family:var(--sans);
+    font-size:12.9px;
+    line-height:1.5;
+    color:var(--meta);
+    margin:0;
+  }
+  .authors strong{color:var(--ink);font-weight:600}
+  .venue{margin-top:2px}
+  .venue em{font-style:italic}
+  .venue .award{color:var(--award);font-weight:600}
+  .links{margin-top:6px;font-size:12.7px}
+  .links a{font-weight:500}
+  .links span{margin:0 5px}
+
+  /* ---------- colophon ---------- */
+
+  footer{
+    margin-top:26px;
+    padding-top:15px;
+    border-top:1px solid var(--rule);
+    font-family:var(--sans);
+    font-size:11.5px;
+    color:var(--meta);
+    text-align:right;
+  }
+
+  /* ---------- narrow windows ---------- */
+
+  @media (max-width:640px){
+    main{padding:44px 24px 48px}
+    .pub{grid-template-columns:190px minmax(0,1fr);column-gap:18px}
+    .thumb{width:190px}
+    .thumb video,.thumb img{width:190px;height:107px}
+  }
+
+  /* Below this the text column would be too narrow to set a title in, so the
+     figure takes its own line instead of squeezing the column. */
+  @media (max-width:520px){
+    main{padding:36px 20px 40px}
+    body{font-size:15px}
+    h1{font-size:26px}
+    .head{flex-direction:column;gap:18px;padding-bottom:24px}
+    .portrait{order:-1;width:104px}
+    .portrait img{width:104px}
+    .pub{grid-template-columns:minmax(0,1fr);row-gap:11px;padding:16px 0}
+    .thumb{width:100%}
+    .thumb video,.thumb img{width:100%;height:auto;aspect-ratio:16/9}
+  }
+</style>
+</head>
 <body>
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6PV2P73"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Satvik Sharma</name>
-              </p>
-              <p>I'm a 2nd year PhD at <a href="https://ai.stanford.edu/">Stanford AI Lab</a>, co-advised by <a href="https://web.stanford.edu/~bohg/">Jeannette Bohg</a> and <a href="https://dorsa.fyi/">Dorsa Sadigh</a>. My research has focused on developing sample-efficient methods for robotic perception and robustness to uncertainty. Before Stanford, I was at <a href="https://bair.berkeley.edu/">Berkeley Artificial Intelligence Research (BAIR)</a> and the <a href="http://autolab.berkeley.edu/">AUTOLAB</a> where I was advised by <a href="https://goldberg.berkeley.edu/">Prof. Ken Goldberg</a>. I did my bachelors degree at <a href="https://eecs.berkeley.edu/">Berkeley</a> in CS.
-              </p>
-              <p style="text-align:center">
-                <a href="mailto:satvik.sharma@berkeley.edu">Email</a> &nbsp/&nbsp
-                <a href="https://scholar.google.com/citations?user=0wZN6hEAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
-                <a href="https://github.com/Satvik1701">Github</a> &nbsp/&nbsp
-                <a href="https://www.linkedin.com/in/satvik-sharma1/">Linkedin</a> &nbsp
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/profile_photo.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/profile_photo.jpg" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Vision-Language Fields for Robotics</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-  
-        <tr onmouseout="nlt_stop()" onmouseover="nlt_start()" bgcolor="#ffffd0">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='ff_image'>
-                  <img src='images/sms_image_cropped.png' width="180"></div>
-                <img src='images/sms_image_cropped.png' width="180">
-              </div>
-              <script type="text/javascript">
-                function nlt_start() {
-                  document.getElementById('nlt_image').style.opacity = "1";
-                }
 
-                function nlt_stop() {
-                  document.getElementById('nlt_image').style.opacity = "0";
-                }
-                nlt_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a >
-                <papertitle>Open-World Semantic Mechanical Search with Large Vision and Language Models</papertitle>
-              </a>
-              <br>
-              <strong>Satvik Sharma</strong>,
-              Kaushik Shivakumar, 
-              Huang Huang, 
-              Lawrence Yunliang Chen, 
-              Ryan Hoque, 
-              Brian Ichter, 
-              Ken Goldberg
-              <br>
-              <em>Conference on Robot Learning (CoRL)</em>, 2023
-              <br>
-              <a href="https://openreview.net/pdf?id=vsEWu6mMUhB">PDF</a> /
-              <a href="data/2023-sms.bib">Bibtex</a>
-              <p></p>
-              <p>Modular framework explicitly separating VLMs and LLMs for occluded object search, which outperforms CLIP-based methods.</p>
-            </td>
-          </tr> 
-          
-          <tr onmouseout="nlt_stop()" onmouseover="nlt_start()" bgcolor="#ffffd0">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='ff_image'>
-                <img src='images/lerftogo_image.png' width="180"></div>
-              <img src='images/lerftogo_image.png' width="180">
-            </div>
-            <script type="text/javascript">
-              function nlt_start() {
-                document.getElementById('nlt_image').style.opacity = "1";
-              }
+<main>
 
-              function nlt_stop() {
-                document.getElementById('nlt_image').style.opacity = "0";
-              }
-              nlt_stop()
-            </script>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <a href="https://lerftogo.github.io/desktop.html">
-              <papertitle>Language Embedded Radiance Fields for Zero-Shot Task-Oriented Grasping </papertitle>
-            </a>
-            <br>
-            Adam Rashid*,
-            <strong>Satvik Sharma*</strong>,
-            Chung Min Kim,
-            Justin Kerr,
-            Lawrence Yunliang Chen,
-            Angjoo Kanazawa,
-            Ken Goldberg 
-            <strong>(* Denotes Equal Contribution, Alphabetically Ordered)</strong></em>
-            <br>
-            <em>Conference on Robot Learning (CoRL)</em>, 2023 <font color="red"><strong>- Best Paper Finalist</strong></em></font>
-            <br>
-            <a href="https://lerftogo.github.io/desktop.html">Website</a> /
-            <a href="https://arxiv.org/pdf/2309.07970.pdf">PDF</a> /
-            <a href="data/2023-lerftogo.bib">Bibtex</a>
-            <p></p>
-            <p>LERF-TOGO uses CLIP and DINO features for language-specified tasks performing zero-shot semantic grasping.</p>
-          </td>
-        </tr> 
-        
+  <header class="head">
+    <div class="intro">
+      <h1>Satvik Sharma</h1>
+      <p class="bio">I'm a 2nd year PhD at <a href="https://ai.stanford.edu/">Stanford AI Lab</a>, co-advised by <a href="https://web.stanford.edu/~bohg/">Jeannette Bohg</a> and <a href="https://dorsa.fyi/">Dorsa Sadigh</a>. My research focuses on dexterous manipulation and on incorporating foundation models into manipulation policies. Before Stanford, I was at <a href="https://bair.berkeley.edu/">Berkeley Artificial Intelligence Research (BAIR)</a> and the <a href="http://autolab.berkeley.edu/">AUTOLAB</a> where I was advised by <a href="https://goldberg.berkeley.edu/">Prof. Ken Goldberg</a>. I did my bachelors degree at <a href="https://eecs.berkeley.edu/">Berkeley</a> in CS.</p>
+      <p class="contact">
+        <a href="mailto:satvik.sharma@berkeley.edu">Email</a><span>/</span><a href="https://scholar.google.com/citations?user=0wZN6hEAAAAJ&amp;hl=en">Google Scholar</a><span>/</span><a href="https://github.com/Satvik1701">Github</a><span>/</span><a href="https://www.linkedin.com/in/satvik-sharma1/">Linkedin</a>
+      </p>
+    </div>
+    <a class="portrait" href="images/profile_photo.jpg"><img alt="profile photo" src="images/profile_photo_display.jpg"></a>
+  </header>
 
-      </tbody></table>
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>Robust and Efficient Policy Learning and Planning</heading>
-          </td>
-        </tr>
-      </tbody></table>
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      
-          <tr onmouseout="nlt_stop()" onmouseover="nlt_start()" bgcolor="#ffffd0">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='ff_image'>
-                <img src='images/2021-pg-broil.png' width="180"></div>
-              <img src='images/2021-pg-broil.png' width="180">
-            </div>
-            <script type="text/javascript">
-              function nlt_start() {
-                document.getElementById('nlt_image').style.opacity = "1";
-              }
+  <h2 class="section-head">Selected Publications</h2>
 
-              function nlt_stop() {
-                document.getElementById('nlt_image').style.opacity = "0";
-              }
-              nlt_stop()
-            </script>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <a href="https://sites.google.com/view/pg-broil/">
-              <papertitle>Policy Gradient Bayesian Robust Optimization for Imitation Learning</papertitle>
-            </a>
-            <br>
-            Zaynah Javed*,
-            Daniel Brown*,
-            <strong> Satvik Sharma</strong>,
-            Jerry Zhu,
-            Ashwin Balakrishna,
-            Marek Petrik,
-            Anca D. Dragan,
-            Ken Goldberg
-            <br>
-            <em>International Conference on Machine Learning (ICML)</em>, 2021
-            <br>
-            <a href="https://sites.google.com/view/pg-broil/">Website</a> /
-            <a href="https://arxiv.org/pdf/2106.06499.pdf">PDF</a> /
-            <a href="data/2021-pg-broil.bib">Bibtex</a>
-            <p></p>
-            <p>A scalable and robust RL algorithm which optimizes for a combination of expected performance and tail risk under a distribution over learned reward functions.</p>
-          </td>
-        </tr>
+  <article class="pub">
+    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://demomimic.github.io/"><video src="images/clips/demomimic.mp4" autoplay muted playsinline loop preload="metadata"></video></a>
+    <div class="body">
+      <h3 class="title"><a href="https://demomimic.github.io/">One Demonstration, Many Objects: Generalizing Manipulation via Local Contact Geometry</a></h3>
+      <p class="authors"><strong>Satvik Sharma*</strong>, Samrat Sahoo*, Huang Huang*, Fei-Fei Li, Jiajun Wu, Dorsa Sadigh, Jeannette Bohg (* Denotes Equal Contribution)</p>
+      <p class="venue"><em>arXiv</em>, 2026</p>
+      <p class="links"><a href="https://demomimic.github.io/">Website</a><span>/</span><a href="https://demomimic.github.io/static/demomimic_paper.pdf">PDF</a></p>
+    </div>
+  </article>
 
-        <tr onmouseout="nlt_stop()" onmouseover="nlt_start()" bgcolor="#ffffd0">
-          <td style="padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:70px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='ff_image'>
-                <img src='images/fleetdagger.gif' width="180"></div>
-              <img src='images/fleetdagger.gif' width="180">
-            </div>
-            <script type="text/javascript">
-              function nlt_start() {
-                document.getElementById('nlt_image').style.opacity = "1";
-              }
+  <article class="pub">
+    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://spd.bot"><video src="images/clips/spd.mp4" autoplay muted playsinline loop preload="metadata"></video></a>
+    <div class="body">
+      <h3 class="title"><a href="https://spd.bot">Pre-training Visual Dexterity in Simulation</a></h3>
+      <p class="authors">Sarthak Kamat*, Adam Rashid*, <strong>Satvik Sharma</strong>, Aseem Doriwala, Chelsea Finn, Phillip Isola, C. Karen Liu (* Denotes Equal Contribution)</p>
+      <p class="venue"><em>arXiv</em>, 2026</p>
+      <p class="links"><a href="https://spd.bot">Website</a><span>/</span><a href="https://arxiv.org/pdf/2608.15917">PDF</a><span>/</span><a href="data/2026-spd.bib">Bibtex</a></p>
+    </div>
+  </article>
 
-              function nlt_stop() {
-                document.getElementById('nlt_image').style.opacity = "0";
-              }
-              nlt_stop()
-            </script>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <a href="https://sites.google.com/berkeley.edu/fleet-dagger/home">
-              <papertitle>Fleet-DAgger: Interactive Robot Fleet Learning with Scalable Human Supervision</papertitle>
-            </a>
-            <br>
-            Ryan Hoque, 
-            Lawrence Yunliang Chen, 
-            <strong> Satvik Sharma</strong>,
-            Karthik Dharmarajan, 
-            Brijen Thananjeyan, 
-            Pieter Abbeel, 
-            Ken Goldberg
-            <br>
-            <em>Conference on Robot Learning (CoRL)</em>, 2022 <font color="red"><strong>- Oral Presentation</strong></em></font>
-            <br>
-            <a href="https://sites.google.com/berkeley.edu/fleet-dagger/home">Website</a> /
-            <a href="https://arxiv.org/pdf/2206.14349.pdf">PDF</a> /
-            <a href="data/2022-fleetdagger.bib">Bibtex</a>
-            <p></p>
-            <p>We introduce new formalism, algorithms, and open-source benchmarks for "Interactive Fleet Learning": interactive learning with multiple robots and multiple humans.              .</p>
-          </td>
-        </tr>
+  <article class="pub">
+    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://jen-pan.github.io/memer/"><video src="images/clips/memer.mp4" autoplay muted playsinline loop preload="metadata"></video></a>
+    <div class="body">
+      <h3 class="title"><a href="https://jen-pan.github.io/memer/">MemER: Scaling Up Memory for Robot Control via Experience Retrieval</a></h3>
+      <p class="authors">Ajay Sridhar*, Jennifer Pan*, <strong>Satvik Sharma</strong>, Chelsea Finn (* Denotes Equal Contribution)</p>
+      <p class="venue"><em>International Conference on Learning Representations (ICLR)</em>, 2026</p>
+      <p class="links"><a href="https://jen-pan.github.io/memer/">Website</a><span>/</span><a href="https://arxiv.org/pdf/2510.20328">PDF</a><span>/</span><a href="https://github.com/memer-policy/memer">Code</a><span>/</span><a href="data/2026-memer.bib">Bibtex</a></p>
+    </div>
+  </article>
 
-        <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-          <td style="padding-left:20px;padding-right:20px;padding-top:40px;padding-bottom:0px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='ff_image'> 
-                <img src='images/l2s.png' width="180"></div>
-              <img src='images/l2s.png' width="180">
-            </div>
-            <script type="text/javascript">
-              function nlt_start() {
-                document.getElementById('nlt_image').style.opacity = "1";
-              }
+  <article class="pub">
+    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://lerftogo.github.io/desktop.html"><video src="images/clips/lerftogo.mp4" autoplay muted playsinline loop preload="metadata"></video></a>
+    <div class="body">
+      <h3 class="title"><a href="https://lerftogo.github.io/desktop.html">Language Embedded Radiance Fields for Zero-Shot Task-Oriented Grasping</a></h3>
+      <p class="authors">Adam Rashid*, <strong>Satvik Sharma*</strong>, Chung Min Kim, Justin Kerr, Lawrence Yunliang Chen, Angjoo Kanazawa, Ken Goldberg (* Denotes Equal Contribution, Alphabetically Ordered)</p>
+      <p class="venue"><em>Conference on Robot Learning (CoRL)</em>, 2023 <span class="award">- Best Paper Finalist</span></p>
+      <p class="links"><a href="https://lerftogo.github.io/desktop.html">Website</a><span>/</span><a href="https://arxiv.org/pdf/2309.07970.pdf">PDF</a><span>/</span><a href="data/2023-lerftogo.bib">Bibtex</a></p>
+    </div>
+  </article>
 
-              function nlt_stop() {
-                document.getElementById('nlt_image').style.opacity = "0";
-              }
-              nlt_stop()
-            </script>
-          </td>
-          <td style="padding-left:20px;padding-right:20px;padding-top:20px;padding-bottom:0px;width:75%;vertical-align:middle">
-            <a href="https://sites.google.com/view/learning-switching-criteria">
-              <papertitle>Learning Switching Criteria for Sim2Real Transfer of Robotic Fabric Manipulation Policies</papertitle>
-            </a>
-            <br>
-            <strong> Satvik Sharma*</strong>,
-            Ellen Novoseller*, 
-            Vainavi Viswanath, 
-            Zaynah Javed, 
-            Rishi Parikh, 
-            Ryan Hoque, 
-            Ashwin Balakrishna, 
-            Daniel S. Brown, 
-            Ken Goldberg
-            <strong>(* Denotes Equal Contribution)</strong></em>
-            <br>
-            <em> Conference on Automation Science and Engineering (CASE)</em>, 2022
-            <br>
-            <a href="https://arxiv.org/pdf/2207.00911.pdf">PDF</a> /
-            <a href="data/2022-case-l2s.bib">Bibtex</a>
-            <p></p>
-            <p>We study strategies to automatically determine when policies trained in simulation can be reliably transferred to a physical robot, specifically for a fabric smoothing task. </p>
-          </td>
-        </tr>
+  <article class="pub">
+    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://openreview.net/forum?id=vsEWu6mMUhB"><img src="images/sms_169.png" alt=""></a>
+    <div class="body">
+      <h3 class="title"><a href="https://openreview.net/forum?id=vsEWu6mMUhB">Open-World Semantic Mechanical Search with Large Vision and Language Models</a></h3>
+      <p class="authors"><strong>Satvik Sharma*</strong>, Huang Huang*, Kaushik Shivakumar, Lawrence Yunliang Chen, Ryan Hoque, Brian Ichter, Ken Goldberg (* Denotes Equal Contribution)</p>
+      <p class="venue"><em>Conference on Robot Learning (CoRL)</em>, 2023</p>
+      <p class="links"><a href="https://openreview.net/pdf?id=vsEWu6mMUhB">PDF</a><span>/</span><a href="data/2023-sms.bib">Bibtex</a></p>
+    </div>
+  </article>
 
-        <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-          <td style="padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='ff_image'>
-                <img src='images/mog_image.png' width="180"></div>
-              <img src='images/mog_image.png' width="180">
-            </div>
-            <script type="text/javascript">
-              function nlt_start() {
-                document.getElementById('nlt_image').style.opacity = "1";
-              }
+  <article class="pub">
+    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://sites.google.com/berkeley.edu/fleet-dagger/home"><video src="images/clips/fleetdagger.mp4" autoplay muted playsinline loop preload="metadata"></video></a>
+    <div class="body">
+      <h3 class="title"><a href="https://sites.google.com/berkeley.edu/fleet-dagger/home">Fleet-DAgger: Interactive Robot Fleet Learning with Scalable Human Supervision</a></h3>
+      <p class="authors">Ryan Hoque, Lawrence Yunliang Chen, <strong>Satvik Sharma</strong>, Karthik Dharmarajan, Brijen Thananjeyan, Pieter Abbeel, Ken Goldberg</p>
+      <p class="venue"><em>Conference on Robot Learning (CoRL)</em>, 2022 <span class="award">- Oral Presentation</span></p>
+      <p class="links"><a href="https://sites.google.com/berkeley.edu/fleet-dagger/home">Website</a><span>/</span><a href="https://arxiv.org/pdf/2206.14349.pdf">PDF</a><span>/</span><a href="data/2022-fleetdagger.bib">Bibtex</a></p>
+    </div>
+  </article>
 
-              function nlt_stop() {
-                document.getElementById('nlt_image').style.opacity = "0";
-              }
-              nlt_stop()
-            </script>
-          </td>
-          <td style="padding-left:20px;padding-right:20px;padding-top:15px;padding-bottom:20px;width:25%;vertical-align:middle">
-              <papertitle>Learning to Efficiently Plan Robust Frictional Multi-Object Grasps</papertitle>
-            </a>
-            <br>
-            Wisdom C. Agboh*, 
-            <strong> Satvik Sharma*</strong>,
-            Kishore Srinivas, 
-            Mallika Parulekar, 
-            Gaurav Datta, 
-            Tianshuang Qiu, 
-            Jeffrey Ichnowski, 
-            Eugen Solowjow, 
-            Mehmet Dogar, 
-            Ken Goldberg <strong>(* Denotes Equal Contribution)</strong></em>
-            <br>
-            <em>International Conference on Intelligent Robots and Systems (IROS)</em>, 2023
-            <br>
-            <a href="https://arxiv.org/pdf/2210.07420.pdf">PDF</a> /
-            <a href="data/2023-mog.bib">Bibtex</a>
-            <p></p>
-            <p>Planning multi-object grasps under frictional constraints using a grasp success predictor network trained in real. We increase picks per hour over baselines and are robust to grasp and state uncertainity. </p>
-          </td>
-        </tr> 
+  <article class="pub">
+    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://sites.google.com/view/pg-broil/"><img src="images/pgbroil_169.png" alt=""></a>
+    <div class="body">
+      <h3 class="title"><a href="https://sites.google.com/view/pg-broil/">Policy Gradient Bayesian Robust Optimization for Imitation Learning</a></h3>
+      <p class="authors">Zaynah Javed*, Daniel Brown*, <strong>Satvik Sharma</strong>, Jerry Zhu, Ashwin Balakrishna, Marek Petrik, Anca D. Dragan, Ken Goldberg</p>
+      <p class="venue"><em>International Conference on Machine Learning (ICML)</em>, 2021</p>
+      <p class="links"><a href="https://sites.google.com/view/pg-broil/">Website</a><span>/</span><a href="https://arxiv.org/pdf/2106.06499.pdf">PDF</a><span>/</span><a href="data/2021-pg-broil.bib">Bibtex</a></p>
+    </div>
+  </article>
 
+  <footer>Website template from <a href="https://jonbarron.info/">Jon Barron</a></footer>
 
-        <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-          <td style="padding-left:20px;padding-right:20px;padding-top:10px;padding-bottom:0px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='ff_image'>
-                <img src='images/deft_image.png' width="180"></div>
-              <img src='images/deft_image.png' width="180">
-            </div>
-            <script type="text/javascript">
-              function nlt_start() {
-                document.getElementById('nlt_image').style.opacity = "1";
-              }
-
-              function nlt_stop() {
-                document.getElementById('nlt_image').style.opacity = "0";
-              }
-              nlt_stop()
-            </script>
-          </td>
-          <td style="padding-left:20px;padding-right:20px;padding-top:15px;padding-bottom:0px;width:25%;vertical-align:middle">
-              <papertitle>DEFT: Diverse Ensembles for Fast Transfer in Reinforcement Learning</papertitle>
-            </a>
-            <br>
-            Simeon Adebola*,
-            <strong> Satvik Sharma*</strong>,
-            Kaushik Shivakumar* <strong>(* Equal Contribution, Alphabetically Ordered)</strong></em>
-            <br>
-            <em>arxiv</em>, 2022
-            <br>
-            <a href="https://arxiv.org/pdf/2209.12412.pdf">PDF</a> /
-            <a href="data/2022-deft.bib">Bibtex</a>
-            <p></p>
-            <p> We study how we can use pretrained ensembles - encouraged via a KL-divergence in their loss function to be as diverse as possible - to then generalize to new tasks using RL. </p>
-          </td>
-        </tr> 
-            
-        
-      </tbody></table>
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>Machine Learning for Automated Agriculture</heading>
-          </td>
-        </tr>
-      </tbody></table>
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      
-        <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-          <td style="padding-left:20px;padding-right:20px;padding-top:0px;padding-bottom:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='ff_image'>
-                <img src='images/2023-icra-alpha.png' width="180"></div>
-              <img src='images/2023-icra-alpha.png' width="180">
-            </div>
-            <script type="text/javascript">
-              function nlt_start() {
-                document.getElementById('nlt_image').style.opacity = "1";
-              }
-
-              function nlt_stop() {
-                document.getElementById('nlt_image').style.opacity = "0";
-              }
-              nlt_stop()
-            </script>
-          </td>
-          <td style="padding-left:20px;padding-right:20px;padding-top:20px;padding-bottom:0px;width:75%;vertical-align:middle">
-              <papertitle>Can Machines Garden? Systematically Comparing the AlphaGarden vs. Professional Horticulturalists</papertitle>
-            </a>
-            <br>
-            Simeon Adebola, 
-            Rishi Parikh, 
-            Mark Presten, 
-            <strong> Satvik Sharma</strong>,
-            Shrey Aeron, 
-            Ananth Rao, 
-            Sandeep Mukherjee, 
-            Tomson Qu, 
-            Christina Wistrom, 
-            Eugen Solowjow, 
-            Ken Goldberg
-            <br>
-            <em>International Conference on Robotics and Automation (ICRA)</em>, 2023 <font color="red"><strong>- Outstanding Automation Paper Finalist</strong></em></font>
-            <br>
-            <a href="https://arxiv.org/pdf/2306.17162.pdf">PDF</a> /
-            <a href="data/2023-icra-alpha.bib">Bibtex</a>
-            <p></p>
-            <p>Comparing the AlphaGarden system (simulator and Farmbot actuation) against professional horticulturalists in terms of plant diversity and canopy coverage. </p>
-          </td>
-        </tr>      
-
-        <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <div class="two" id='ff_image'>
-                <img src='images/2022-case-alpha.png' width="180"></div>
-              <img src='images/2022-case-alpha.png' width="180">
-            </div>
-            <script type="text/javascript">
-              function nlt_start() {
-                document.getElementById('nlt_image').style.opacity = "1";
-              }
-
-              function nlt_stop() {
-                document.getElementById('nlt_image').style.opacity = "0";
-              }
-              nlt_stop()
-            </script>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-              <papertitle>Automated Pruning of Polyculture Plants</papertitle>
-            </a>
-            <br>
-            Mark Presten,
-            Rishi Parikh,
-            Shrey Aeron, 
-            Sandeep Mukherjee, 
-            Simeon Adebola, 
-            <strong> Satvik Sharma</strong>,
-            Mark Theis, 
-            Walter Teitelbaum, 
-            Ken Goldberg
-            <br>
-            <em>Conference on Automation Science and Engineering (CASE)</em>, 2022 <font color="red"><strong>- Best Paper Award</strong></em></font>
-            <br>
-            <a href="https://arxiv.org/pdf/2208.10472.pdf">PDF</a> /
-            <a href="data/2022-case-alpha.bib">Bibtex</a>
-            <p></p>
-            <p>Fully autonomous system for pruning polyculture plants with specialized vision algorithms for identifying plants and tracking their centers.</p>
-          </td>
-        </tr>
-
-
-        </tbody></table>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:right;font-size:small;">
-                Website template from <a href="https://jonbarron.info/">Jon Barron</a>
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-      </td>
-    </tr>
-  </table>
+</main>
 </body>
-
 </html>
