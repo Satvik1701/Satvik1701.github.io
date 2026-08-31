@@ -132,6 +132,7 @@
      not media the reader has to operate. */
   .thumb{display:block;width:220px;line-height:0}
   .thumb video,.thumb img{
+    pointer-events:none;
     width:220px;
     height:124px;
     display:block;
@@ -238,7 +239,7 @@
   <h2 class="section-head">Selected Publications</h2>
 
   <article class="pub">
-    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://demomimic.github.io/"><video src="images/clips/demomimic.mp4" autoplay muted playsinline loop preload="metadata"></video></a>
+    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://demomimic.github.io/"><video src="images/clips/demomimic.mp4" autoplay muted playsinline loop preload="auto" disablepictureinpicture disableremoteplayback></video></a>
     <div class="body">
       <h3 class="title"><a href="https://demomimic.github.io/">One Demonstration, Many Objects: Generalizing Manipulation via Local Contact Geometry</a></h3>
       <p class="authors"><strong>Satvik Sharma*</strong>, Samrat Sahoo*, Huang Huang*, Fei-Fei Li, Jiajun Wu, Dorsa Sadigh, Jeannette Bohg (* Denotes Equal Contribution)</p>
@@ -248,7 +249,7 @@
   </article>
 
   <article class="pub">
-    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://spd.bot"><video src="images/clips/spd.mp4" autoplay muted playsinline loop preload="metadata"></video></a>
+    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://spd.bot"><video src="images/clips/spd.mp4" autoplay muted playsinline loop preload="auto" disablepictureinpicture disableremoteplayback></video></a>
     <div class="body">
       <h3 class="title"><a href="https://spd.bot">Pre-training Visual Dexterity in Simulation</a></h3>
       <p class="authors">Sarthak Kamat*, Adam Rashid*, <strong>Satvik Sharma</strong>, Aseem Doriwala, Chelsea Finn, Phillip Isola, C. Karen Liu (* Denotes Equal Contribution)</p>
@@ -258,7 +259,7 @@
   </article>
 
   <article class="pub">
-    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://jen-pan.github.io/memer/"><video src="images/clips/memer.mp4" autoplay muted playsinline loop preload="metadata"></video></a>
+    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://jen-pan.github.io/memer/"><video src="images/clips/memer.mp4" autoplay muted playsinline loop preload="auto" disablepictureinpicture disableremoteplayback></video></a>
     <div class="body">
       <h3 class="title"><a href="https://jen-pan.github.io/memer/">MemER: Scaling Up Memory for Robot Control via Experience Retrieval</a></h3>
       <p class="authors">Ajay Sridhar*, Jennifer Pan*, <strong>Satvik Sharma</strong>, Chelsea Finn (* Denotes Equal Contribution)</p>
@@ -268,7 +269,7 @@
   </article>
 
   <article class="pub">
-    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://lerftogo.github.io/desktop.html"><video src="images/clips/lerftogo.mp4" autoplay muted playsinline loop preload="metadata"></video></a>
+    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://lerftogo.github.io/desktop.html"><video src="images/clips/lerftogo.mp4" autoplay muted playsinline loop preload="auto" disablepictureinpicture disableremoteplayback></video></a>
     <div class="body">
       <h3 class="title"><a href="https://lerftogo.github.io/desktop.html">Language Embedded Radiance Fields for Zero-Shot Task-Oriented Grasping</a></h3>
       <p class="authors">Adam Rashid*, <strong>Satvik Sharma*</strong>, Chung Min Kim, Justin Kerr, Lawrence Yunliang Chen, Angjoo Kanazawa, Ken Goldberg (* Denotes Equal Contribution, Alphabetically Ordered)</p>
@@ -288,7 +289,7 @@
   </article>
 
   <article class="pub">
-    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://sites.google.com/berkeley.edu/fleet-dagger/home"><video src="images/clips/fleetdagger.mp4" autoplay muted playsinline loop preload="metadata"></video></a>
+    <a class="thumb" tabindex="-1" aria-hidden="true" href="https://sites.google.com/berkeley.edu/fleet-dagger/home"><video src="images/clips/fleetdagger.mp4" autoplay muted playsinline loop preload="auto" disablepictureinpicture disableremoteplayback></video></a>
     <div class="body">
       <h3 class="title"><a href="https://sites.google.com/berkeley.edu/fleet-dagger/home">Fleet-DAgger: Interactive Robot Fleet Learning with Scalable Human Supervision</a></h3>
       <p class="authors">Ryan Hoque, Lawrence Yunliang Chen, <strong>Satvik Sharma</strong>, Karthik Dharmarajan, Brijen Thananjeyan, Pieter Abbeel, Ken Goldberg</p>
@@ -310,5 +311,28 @@
   <footer>Website template from <a href="https://jonbarron.info/">Jon Barron</a></footer>
 
 </main>
+<script>
+/* The clips are illustrations: no controls, no tap target, always looping.
+   The attributes alone autoplay them in every current browser; this only
+   recovers the cases that decline (a restored bfcache page, a background
+   tab on load, iOS low-power mode). Playback is tied to visibility rather
+   than forced, so off-screen clips can still be paused to save power. */
+(function () {
+  var clips = Array.prototype.slice.call(document.querySelectorAll('.thumb video'));
+  if (!clips.length) return;
+  function play(v) { var p = v.play(); if (p && p.catch) { p.catch(function () {}); } }
+  function playAll() { clips.forEach(play); }
+  clips.forEach(function (v) { v.addEventListener('loadeddata', function () { play(v); }); });
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) playAll(); });
+  window.addEventListener('pageshow', playAll);
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) play(e.target); });
+    }, { rootMargin: '200px' });
+    clips.forEach(function (v) { io.observe(v); });
+  }
+  playAll();
+})();
+</script>
 </body>
 </html>
